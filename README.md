@@ -1,3 +1,4 @@
+
 [![Bare Conductive](http://bareconductive.com/assets/images/LOGO_256x106.png)](http://www.bareconductive.com/)
 
 # node-picap
@@ -9,7 +10,7 @@ This library requires Node.js v6.7.0 or higher and also requires that the [Bare 
 
 If you're using a Raspberry Pi, this is most easily achieved by running
 
-```
+```sh
 sudo apt-get install picap
 ```
 which will install this module along with lots of example code and setup utilities that will help you get the most out of your Pi Cap. 
@@ -18,7 +19,7 @@ which will install this module along with lots of example code and setup utiliti
 If you're a masochist, start with
 
 
-```
+```sh
 npm install picap 
 ```
 
@@ -26,7 +27,7 @@ npm install picap
 
 ### Simple Touch example
 
-```
+```js
 var MPR121 = require('node-picap');
 var mpr121;
 
@@ -47,7 +48,7 @@ mpr121.on('data', function(data) {
 
 ### Datastream example
 
-```
+```js
 var MPR121 = require('node-picap');
 var mpr121;
 
