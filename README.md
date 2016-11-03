@@ -19,7 +19,7 @@ If you're a masochist, start with
 
 
 ```sh
-npm install picap 
+npm install node-picap 
 ```
 
 ## Usage
