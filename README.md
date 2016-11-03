@@ -1,9 +1,8 @@
-
-[![Bare Conductive](http://bareconductive.com/assets/images/LOGO_256x106.png)](http://www.bareconductive.com/)
-
 # node-picap
 
-Node module for interfacing with the MPR121 on the [Bare Conductive Pi Cap]().
+Node module for interfacing with the MPR121 on the [Bare Conductive Pi Cap](https://www.bareconductive.com/shop/pi-cap/).
+
+[![Bare Conductive](http://bareconductive.com/assets/images/LOGO_256x106.png)](http://www.bareconductive.com/)
 
 ## Installation
 This library requires Node.js v6.7.0 or higher and also requires that the [Bare Conductive MPR121 Wiring Pi Library](https://github.com/BareConductive/wiring-pi-mpr121) be installed.
