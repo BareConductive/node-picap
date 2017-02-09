@@ -2,13 +2,21 @@ var EventEmitter  = require('events').EventEmitter;
 var MPR121Wrapper = require('bindings')('addon').MPR121Wrapper;
 var util          = require('util');
 
-function MPR121(address) {
+function MPR121(address, opts) {
+  // if address is not string, it's probably opts
+  if (typeof address !== 'string') {
+    opts    = address;
+    address = undefined;
+  }
+
+  // update default opts settings
+  opts = Object.assign({ interval: 10 }, opts);
+
+  // turn this into EE
   EventEmitter.call(this);
 
+  // start MPR121
   this.mpr121 = new MPR121Wrapper(address);
-
-  // TODO: make this configurable
-  var interval = 10;
 
   // start emitting
   setInterval(function() {
@@ -16,7 +24,7 @@ function MPR121(address) {
       var data = this.mpr121.step();
       this.emit('data', data);
     }
-  }.bind(this), interval);
+  }.bind(this), opts.interval);
 }
 
 // inherit EventEmitter prototype

@@ -12,14 +12,14 @@ If you're using a Raspberry Pi, this is most easily achieved by running
 ```sh
 sudo apt-get install picap
 ```
-which will install this module along with lots of example code and setup utilities that will help you get the most out of your Pi Cap. 
+which will install this module along with lots of example code and setup utilities that will help you get the most out of your Pi Cap.
 
 
 If you're a masochist, start with
 
 
 ```sh
-npm install node-picap 
+npm install node-picap
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ var MPR121 = require('node-picap');
 var mpr121;
 
 // correct address for the Pi Cap - other boards may vary
-mpr121 = new MPR121('0x5C'); 
+mpr121 = new MPR121('0x5C');
 
 mpr121.on('data', function(data) {
   data.forEach(function(electrode, i) {
@@ -51,8 +51,11 @@ mpr121.on('data', function(data) {
 var MPR121 = require('node-picap');
 var mpr121;
 
-// correct address for the Pi Cap - other boards may vary
-mpr121 = new MPR121('0x5C'); 
+// note that interval sets the interval (in ms) at which 
+// the module attempts to emit data events - the MPR121 
+// hardware sets a lower limit on this - default is 10ms, 
+// can set down to 1ms
+mpr121 = new MPR121('0x5C', { interval: 10 });
 
 mpr121.on('data', function(data) {
   // split out each of the various data streams...
@@ -76,5 +79,5 @@ mpr121.on('data', function(data) {
 ## License
 
   This work is licensed under a [MIT license](https://opensource.org/licenses/MIT)
-  
-  Copyright (c) 2016, Bare Conductive
+
+  Copyright (c) 2016-2017, Bare Conductive
